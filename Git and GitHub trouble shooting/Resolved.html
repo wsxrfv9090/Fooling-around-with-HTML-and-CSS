@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolved</title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="Q">
+        <button class="page_switcher"><a href="index.html">Main Page</a></button>
+        <button class="page_switcher"><a href="Unresolved.html">Unresolved</a></button>
+    </div>
+    <h1>Resolved</h1>
+    <h3>23/1/8 14:42</h3>
+    <h4>Error Info #1: </h4>
+    <p class="B">$ git push</p>
+    <p class="C">fatal: unable to access 'https://github.com/wsxrfv9090/Fooling-around-with-HTML-and-CSS.git/': OpenSSL
+        SSL_read:
+        Connection was reset, errno 10054</p>
+    <h4>Solution: </h4>
+    <p class="D">$ git config --global http.sslVerify "false"</p>
+
+
+    <h4>Error Info #2: </h4>
+    <p class="B">$ git push</p>
+    <P class="C">fatal: unable to access 'https://github.com/wsxrfv9090/Fooling-around-with-HTML-and-CSS.git/': Failed
+        to connect to github.com port 443 after 21047 ms: Timed out</P>
+    <h4>Solution: </h4>
+    <p class="D">Just wait, no other choice, usually it just take 4 or 5 minutes and retry, the problem will go away.
+        Probably have something to do with VPN was opening, but I didn't have the problem again so I can't test it.
+    </p>
+
+
+    <h4>Error Info #3: </h4>
+    <p class="B">$ git push</p>
+    <p class="C">fatal: unable to access 'https://github.com/wsxrfv9090/Fooling-around-with-HTML-and-CSS.git/': Failed
+        to connect to github.com port 443 after 1140 ms: Connection refused</p>
+    <h4>Solution: </h4>
+    <h5>First Attempt: Remove proxies</h5>
+    <p class="B">$ git config --global --unset http.proxy</p>
+    <p class="E">$ git config --global --unset https.proxy</p>
+    <p class="E">$ git config --global http.proxy</p>
+    <p class="C">$ git config --global https.proxy</p>
+    <h5>Second Attempt: Change the map between IP address and domain</h5>
+    <p class="B">1. Get gihub's ip address, which is 140.82.112.3</p>
+    <p class="E">2. Find the hosts file in your computer under the directory of C:\Windows\System32\drivers\etc</p>
+    <p class="C">3. Add a new line like this: 140.82.112.3 github.com</p>
+    <div>
+        <img src="01.png">
+    </div>
+
+
+    <h4>Error Info #4: </h4>
+    <p class="B">remote: Support for password authentication was removed on August 13, 2021. Please use a personal
+        access token instead.</p>
+    <p class="E">remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/
+        for more information.</p>
+    <p class="C">fatal: unable to access "..." : The requested URL returned error: 403</p>
+    <h4>Solution: </h4>
+    <p class="B">Go to the start menu on windows, and open control panel</p>
+    <p class="E">Show all the options and open Credentials Manager</p>
+    <p class="E">Make a new normal credential and set up like this:</p>
+    <p class="E">Address: git:https://github.com</p>
+    <p class="E">Username: 945825394@qq.com</p>
+    <p class="C">Password: Personal Access Token you generated from gihub, under the directory of: Personal Settings >
+        Developer Settings > Personal Access Token
+    </p>
+
+
+    <h4>Error Info #5: </h4>
+    <p class="D">git@github.com: Permission denied (publickey). fatal: Could not read from remote repository</p>
+    <h4>Solution: </h4>
+    <p class="B">1. $ ssh-keygen -t rsa -C 2547241288@qq.com</p>
+    <p class="E">2. $ cat id_rsa.pub </p>
+    <p class="E">(((Under the directory of C:/users/administrator/.ssh</p>
+    <p class="E">3. copy the outcome</p>
+    <p class="E">4. Go to github.com > user > setting > SSH and GPG keys > new SSH key > paste > done</p>
+    <p class="E">5. use ssh -T git@github.com to check if the connection is successful, if it is, it should display:
+    </p>
+    <p class="C">You've successfully authenticated, but GitHub does not provide shell access.</p>
+
+
+    <h4>Error Info #6: </h4>
+    <p class="D">fatal: unable to access 'https://github.com/wsxrfv9090/Fooling-around-with-HTML-and-CSS.git/': Could
+        not resolve proxy: proxy.server.com</p>
+    <h4>Solution: </h4>
+    <p class="B">1. $ git config --global http.proxy</p>
+    <p class="C">2. $ git config --global --unset http.proxy</p>
+
+
+    <h4>Error Info #6: </h4>
+    <p class="B">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</p>
+    <p class="E">@ WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! @</p>
+    <p class="E">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</p>
+    <p class="E">IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!</p>
+    <p class="E">Someone could be eavesdropping on you right now (man-in-the-middle attack)!</p>
+    <p class="E">It is also possible that a host key has just been changed.</p>
+    <p class="E">The fingerprint for the RSA key sent by the remote host is</p>
+    <p class="E">SHA256:rEmlJenVMSL5GVemSY0Gk8WGw6B4ege4J85M+vup8R0.</p>
+    <p class="E">Please contact your system administrator.</p>
+    <p class="E">Add correct host key in /c/users/Air/.ssh/known_hosts to get rid of this message.</p>
+    <p class="E">Offending ECDSA key in /c/users/Air/.ssh/known_hosts:3</p>
+    <p class="E">Host key for github.com has changed and you have requested strict checking.</p>
+    <p class="E">Host key verification failed.</p>
+    <p class="E">fatal: Could not read from remote repository.</p>
+    <P class="C">Please make sure you have the correct access rights
+        and the repository exists.
+    </P>
+    <h4>Solution: </h4>
+    <p class="B">1. Go to directory: C:/users/administrators/.ssh/known_hosts</p>
+    <P class="E">2. Delete everything in it.
+    <P class="C">3. Save</P>
+
+</body>
+
+</html>

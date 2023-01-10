@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(175, 203, 227);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+h5 {
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+img {
+    padding: 20px;
+}
+
+.A {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-indent: 50px;
+}
+
+.B {
+    text-indent: 30px;
+    font-size: 20px;
+    margin-top: 40px;
+    background-color: rgb(190, 121, 121);
+}
+
+.C {
+    text-indent: 30px;
+    font-size: 20px;
+    margin-bottom: 40px;
+    background-color: rgb(190, 121, 121);
+}
+
+.D {
+    text-indent: 30px;
+    font-size: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: rgb(190, 121, 121);
+}
+
+.E {
+    text-indent: 30px;
+    font-size: 20px;
+    background-color: rgb(190, 121, 121);
+}
+
+.P {
+    text-align: center;
+    font-size: 30px;
+    block-size: 60px;
+    inline-size: 200px;
+}
+
+.ButtonHolder {
+    text-align: center;
+    padding-top: 30px;
+}
+
+#qwer {
+    margin-top: 50px;
+}
+
+.page_switcher {
+    background-color: rgba(0, 255, 255, 0.55);
+    border-color: rgb(176, 81, 81);
+}
