@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    margin: 50px;
+}
+
+table {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    border: 20px;
+}
+
+td {
+    margin: 20px;
+}
