@@ -4,6 +4,17 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: rgb(115, 173, 223);
+}
+
+div {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+}
+
 h1 {
     text-align: center;
     margin: 50px;

@@ -1,84 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TEST</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        table {
-            width: 700px;
-            margin: 50px auto;
-            border: 1px solid#000;
-            border-collapse: collapse;
-            text-align: center;
-        }
-
-        caption {
-            font-size: 20px;
-            font-weight: bold;
-            line-height: 60px;
-        }
-
-        th,
-        td {
-            border: 1px solid #000;
-            padding: 10px 0;
-        }
-    </style>
+    <title>Example Form</title>
 </head>
 
 <body>
-    <table>
-        <caption> TEST</caption>
-        <tr>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
-            <th>4</th>
-            <th>5</th>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>7</td>
-            <td>8</td>
-            <td>9</td>
-            <td>10</td>
-        </tr>
-    </table>
+    <h1>Example Form</h1>
+    <form>
+        <label for="inputField">Enter Text:</label>
+        <input type="text" id="inputField" name="inputField"><br><br>
+        <button type="button" onclick="insertInput()">Submit</button>
+    </form>
     <script>
-        let name = prompt('Input anything 1'),
-            price = prompt('Input anthing 2'),
-            num = prompt('Input anything 3'),
-            address = prompt('Input anything 4');
-        let str = `    
-        <table>
-            <caption> TEST</caption>
-            <tr>
-                <th>1</th>
-                <th>2</th>
-                <th>3</th>
-                <th>4</th>
-                <th>5</th>
-            </tr>
-            <tr>
-                <td>${name}</td>
-                <td>${price}</td>
-                <td>${num}</td>
-                <td>${price * num}</td>
-                <td>${address}</td>
-            </tr>
-        </table>
-        `;
-        document.wirte(str);
-
+        function insertInput() {
+            var userInput = prompt("Please enter your text:");
+            document.getElementById("inputField").value = userInput;
+        }
     </script>
 </body>
 

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Button Prompt Example</title>
+</head>
+
+<body>
+    <h1>Button Prompt Example</h1>
+    <p>Click the button to add a new row to the table:</p>
+    <table id="myTable">
+        <tr>
+            <th>Input</th>
+        </tr>
+    </table>
+    <button onclick="addRow()">Add Row</button>
+    <script>
+        function addRow() {
+            var input = prompt("Enter your input:");
+            if (input != null && input != "") {
+                var table = document.getElementById("myTable");
+                var row = table.insertRow(-1);
+                var cell = row.insertCell(0);
+                cell.innerHTML = input;
+            }
+        }
+    </script>
+</body>
+
+</html>
