@@ -27,8 +27,32 @@ table {
     margin: 20px;
     padding: 20px;
     border: 20px;
+    border-collapse: collapse;
+    border-color: black;
 }
 
 td {
-    margin: 20px;
+    padding-left: 20px;
+    padding-right:20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
 }
+
+#deleteButton,#editButton{
+    text-align: center;
+    padding:2px;
+}
+
+#addWords{
+    margin-right:5px;
+    padding-left: 3px;
+    padding-top:1px;
+    padding-bottom: 1px;
+}
+
+#addWordsButton{
+    text-align: center;
+    padding:2px;
+}
+
