@@ -1,0 +1,1 @@
+This is just me fooling around with HTML and CSS, I'm not planning on learning it systematically, this repo is just for me to mess around and try different things.

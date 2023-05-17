@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(115, 173, 223);
+}
+
+div {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    margin: 50px;
+}
+
+table {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    border: 20px;
+    border-collapse: collapse;
+    border-color: black;
+}
+
+td {
+    padding-left: 20px;
+    padding-right:20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+#deleteButton,#editButton{
+    text-align: center;
+    padding:2px;
+}
+
+#addWords{
+    margin-right:5px;
+    padding-left: 3px;
+    padding-top:1px;
+    padding-bottom: 1px;
+}
+
+#addWordsButton{
+    text-align: center;
+    padding:2px;
+}
+

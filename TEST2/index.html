@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Button Click Example</title>
+  <script>
+    function addRow() {
+      var table = document.getElementById("myTable");
+      var row = table.insertRow(-1);
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      var cell3 = row.insertCell(2);
+      var cell4 = row.insertCell(3);
+      var input = prompt("Enter a value:");
+      cell1.innerHTML = input;
+      cell2.innerHTML = "<button onclick='editRow(this)'>Edit</button>";
+      cell3.innerHTML = "<button onclick='deleteRow(this)'>Delete</button>";
+      cell4.innerHTML = "<button onclick='saveTable()'>Save</button>";
+    }
+
+    function deleteRow(row) {
+      var d = row.parentNode.parentNode.rowIndex;
+      document.getElementById("myTable").deleteRow(d);
+      saveTable();
+    }
+
+    function editRow(row) {
+      var rowIndex = row.parentNode.parentNode.rowIndex;
+      var input = prompt("Enter a new value:");
+      document.getElementById("myTable").rows[rowIndex].cells[0].innerHTML = input;
+      saveTable();
+    }
+
+    function saveTable() {
+      var table = document.getElementById("myTable");
+      var html = table.outerHTML;
+      localStorage.setItem("myTable", html);
+    }
+
+    function loadTable() {
+      var html = localStorage.getItem("myTable");
+      if (html) {
+        document.getElementById("myTable").outerHTML = html;
+      }
+    }
+  </script>
+</head>
+
+<body onload="loadTable()">
+  <h2>My Table</h2>
+  <table id="myTable" border="1">
+    <tr>
+      <th>Value</th>
+      <th>Edit</th>
+      <th>Delete</th>
+      <th>Save</th>
+    </tr>
+  </table>
+  <button onclick="addRow()">Add Row</button>
+</body>
+
+</html>

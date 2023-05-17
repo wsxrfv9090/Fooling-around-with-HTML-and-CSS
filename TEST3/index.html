@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Table</title>
+  </head>
+  <body>
+    <h1>My Table</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Input</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+      </tbody>
+    </table>
+    <button onclick="addRow()">Add Row</button>
+    
+    <script>
+      // Initialize the table with any saved data
+      var tableData = JSON.parse(localStorage.getItem("tableData")) || [];
+      var tableBody = document.getElementById("table-body");
+      for (var i = 0; i < tableData.length; i++) {
+        addTableRow(tableData[i]);
+      }
+      
+      function addRow() {
+        var input = prompt("Enter your input:");
+        if (input != null && input != "") {
+          var row = [input, new Date().toLocaleString()];
+          tableData.push(row);
+          localStorage.setItem("tableData", JSON.stringify(tableData));
+          addTableRow(row);
+        }
+      }
+      
+      function addTableRow(rowData) {
+        var row = document.createElement("tr");
+        var inputCell = document.createElement("td");
+        inputCell.innerText = rowData[0];
+        var deleteCell = document.createElement("td");
+        var deleteButton = document.createElement("button");
+        deleteButton.innerText = "Delete";
+        deleteButton.onclick = function() {
+          var rowIndex = tableData.indexOf(rowData);
+          if (rowIndex >= 0) {
+            tableData.splice(rowIndex, 1);
+            localStorage.setItem("tableData", JSON.stringify(tableData));
+            tableBody.removeChild(row);
+          }
+        };
+        deleteCell.appendChild(deleteButton);
+        row.appendChild(inputCell);
+        row.appendChild(deleteCell);
+        tableBody.appendChild(row);
+      }
+    </script>
+  </body>
+</html>

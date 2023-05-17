@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Button and Table</title>
+  </head>
+  <body>
+    <button onclick="addValue()">Add Value</button>
+    <table id="myTable">
+      <tr>
+        <th>Values</th>
+      </tr>
+    </table>
+
+    <script>
+      function addValue() {
+        var value = prompt("Enter a value:");
+        var table = document.getElementById("myTable");
+        var row = table.insertRow(-1);
+        var cell = row.insertCell(0);
+        cell.innerHTML = value;
+        
+        // Save value in local storage
+        var values = JSON.parse(localStorage.getItem("values")) || [];
+        values.push(value);
+        localStorage.setItem("values", JSON.stringify(values));
+      }
+
+      // Load saved values from local storage
+      var savedValues = JSON.parse(localStorage.getItem("values")) || [];
+      var table = document.getElementById("myTable");
+      savedValues.forEach(function(value) {
+        var row = table.insertRow(-1);
+        var cell = row.insertCell(0);
+        cell.innerHTML = value;
+      });
+    </script>
+  </body>
+</html>

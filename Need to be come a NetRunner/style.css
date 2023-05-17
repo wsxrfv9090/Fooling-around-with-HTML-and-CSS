@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsla(243, 92%, 30%, 0.848);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 23px;
+    padding: 80px;
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+p {
+    text-indent: 50px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
