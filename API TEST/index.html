@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chat with GPT</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var conversation = [];
+
+            function logMessage(message) {
+                var logBox = document.getElementById("log-box");
+                logBox.innerHTML += "<p>" + message + "</p>";
+            }
+
+            function sendMessage() {
+                var userInput = document.getElementById("user-input");
+                var message = userInput.value;
+                userInput.value = "";
+
+                conversation.push("User: " + message);
+                logMessage("User: " + message);
+
+                $.ajax({
+                    type: "POST",
+                    url: "https://api.openai.com/v1/engines/davinci-codex/completions",
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", "Bearer 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");
+                    },
+                    data: JSON.stringify({
+                        prompt: conversation.join("\n"),
+                        max_tokens: 100,
+                        temperature: 0.6
+                    }),
+                    success: function (data) {
+                        var response = data.choices[0].text.trim();
+                        conversation.push("AI: " + response);
+                        logMessage("AI: " + response);
+                    },
+                    contentType: "application/json"
+                });
+            }
+
+            var inputForm = document.getElementById("input-form");
+            inputForm.addEventListener("submit", function (event) {
+                event.preventDefault();
+                sendMessage();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Chat with GPT</h1>
+    <div id="log-box"></div>
+    <form id="input-form">
+        <input type="text" id="user-input" placeholder="Enter your message..." required>
+        <button type="submit">Send</button>
+    </form>
+</body>
+
+</html>
