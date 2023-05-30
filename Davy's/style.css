@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to bottom,
+            #080808 3%,
+            /* This is black */
+            #4a148c 70%,
+            /* This is the closest web-safe approximation of Nightshade Violet */
+            #6f00ff
+            /* This is Electric Indigo */
+        );
+    height: 100vh;
+    /* this makes sure the gradient covers the whole height of the viewport */
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left .right {
+    display: flex;
+}
+
+#topBar {
+    /* background-image: linear-gradient(to left, #4c345c 0%, #56578a 100%); */
+}
+
+#headLine {}
+
+.topBarBtn {
+    margin-left: 11px;
+    margin-top: 10px;
+    width: 100px;
+    height: 50px;
+    border-radius: 100%;
+    font-size: 15px;
+    background-color: #c10917;
+
+}
+
+h {
+    text-align: center;
+    color: rgba(45, 181, 181, 0.467);
+}
