@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to bottom,
+            #080808 3%,
+            /* This is black */
+            #4a148c 70%,
+            /* This is the closest web-safe approximation of Nightshade Violet */
+            #6f00ff
+            /* This is Electric Indigo */
+        );
+    height: 100vh;
+    /* this makes sure the gradient covers the whole height of the viewport */
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    background-color: #585429;
+}
+
+.left .right {
+    display: flex;
+}
+
+#topBar {
+    /* background-image: linear-gradient(to left, #4c345c 0%, #56578a 100%); */
+}
+
+.topBarBtn {
+    padding: 5px;
+    margin-left: 10px;
+    margin-top: 14px;
+    width: 100px;
+    height: 50px;
+    border-radius: 30%;
+    font-size: 15px;
+    background-color: #c10917;
+    color: rgb(169, 171, 231);
+
+    /* font-size: 2rem; */
+    /* font-weight: 600; */
+    /* margin: 5rem 2rem; */
+    /* border: none; */
+    /* cursor: pointer; */
+
+}
+
+h1 {
+    text-align: center;
+    color: #c10917;
+}
+
+/* Existing styles if any */
+
+/* New styles for the login box */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    /* Set the width you prefer */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    text-align: center;
+}
+
+.input-field {
+    margin: 10px 0;
+    padding: 10px;
+    width: calc(100% - 20px);
+    /* Adjust width based on padding */
+    box-sizing: border-box;
+}
+
+/* Style for the container if needed */
+.container {
+    width: 100%;
+    /* Full width */
+    height: 100vh;
+    /* Full height of the viewport */
+    position: relative;
+    /* Allows absolute positioning relative to this container */
+}

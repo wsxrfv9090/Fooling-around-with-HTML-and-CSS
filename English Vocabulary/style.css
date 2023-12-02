@@ -33,26 +33,33 @@ table {
 
 td {
     padding-left: 20px;
-    padding-right:20px;
+    padding-right: 20px;
     padding-top: 5px;
     padding-bottom: 5px;
     text-align: center;
 }
 
-#deleteButton,#editButton{
-    text-align: center;
-    padding:2px;
+#myTable01 {
+    min-width: 500px;
+    max-width: 1000px;
+    width: 100%;
+    margin: auto;
 }
 
-#addWords{
-    margin-right:5px;
+#deleteButton,
+#editButton {
+    text-align: center;
+    padding: 2px;
+}
+
+#addWords {
+    margin-right: 5px;
     padding-left: 3px;
-    padding-top:1px;
+    padding-top: 1px;
     padding-bottom: 1px;
 }
 
-#addWordsButton{
+#addWordsButton {
     text-align: center;
-    padding:2px;
+    padding: 2px;
 }
-
